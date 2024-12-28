@@ -22,3 +22,13 @@ LevelMap& assets::getLevelPathMap() {
 void assets::addLevel(const std::string& name, const std::string& path) {
 	m_LevelPathMap[name] = path;
 }
+
+void assets::addTexture(std::string name, std::string path) {
+	std::shared_ptr<sf::Texture> tex = std::make_shared<sf::Texture>();
+	tex->loadFromFile(path);
+	m_textures[name] = tex;
+}
+
+std::shared_ptr<sf::Texture> assets::getTexture(std::string name) {
+	return m_textures[name];
+}

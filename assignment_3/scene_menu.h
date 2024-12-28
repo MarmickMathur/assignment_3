@@ -7,6 +7,7 @@ class menu :public scene
 {
 	sf::Text m_menuText;
 	int m_index = 0;
+	std::string m_levelName;
 	void init();
 	std::map<std::string,std::string>& m_levelMap;
 

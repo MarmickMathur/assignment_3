@@ -1,6 +1,5 @@
 // entity.h
 
-
 #include <iostream>
 #include <tuple>
 

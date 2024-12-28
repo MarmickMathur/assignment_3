@@ -1,5 +1,6 @@
 #include "scene_menu.h"
 #include "gameEngine.h"
+#include "scene_play.h"
 #include <iostream>
 
 menu::menu(const std::shared_ptr<gameEngine> gpe):
@@ -19,6 +20,11 @@ void menu::init() {
 
 void menu::update() {
 	sRender();
+	if (hasEnded) {
+		std::cout << "scene switch";
+		std::shared_ptr<play> selectedScene= std::make_shared<play>(m_gameEngine, m_levelMap[m_levelName]);
+		m_gameEngine->changeScene(m_levelName, selectedScene);
+	}
 }
 
 void menu::sDoAction(const action& action) {
@@ -31,7 +37,9 @@ void menu::sDoAction(const action& action) {
 			m_index = std::min(m_index, (int)m_levelMap.size() -1);
 		}
 		else if (action.name == "Select") {
-			std::cout << "select";
+			std::cout << m_levelMap[m_levelName] << "\n";
+			std::cout << "play " << m_levelName;
+			hasEnded = 1;
 		}
 	}
 }
@@ -44,6 +52,7 @@ void menu::sRender() {
 	int cnt = 0;
 	for (auto i : m_levelMap) {
 		if (cnt == m_index) {
+			m_levelName = i.first;
 			list += "\t";
 		}
 		list += i.first;
@@ -59,7 +68,7 @@ void menu::sRender() {
 	float y = m_menuText.getLocalBounds().height / 2 + m_menuText.getLocalBounds().top;
 	//centering the text
 	m_menuText.setOrigin(x, y);
-	m_menuText.setPosition(m_gameEngine->getWindow().getSize().x/2 , m_gameEngine->getWindow().getSize().y / 2);
+	m_menuText.setPosition((float)(m_gameEngine->getWindow().getSize().x) / 2.0, (float)(m_gameEngine->getWindow().getSize().y) / 2.0);
 
 	m_gameEngine->getWindow().draw(m_menuText);
 	m_gameEngine->getWindow().display();

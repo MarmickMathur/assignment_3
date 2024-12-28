@@ -45,6 +45,9 @@
     <ClCompile Include="scene_menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="scene_play.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="src\config.txt" />
@@ -79,8 +82,16 @@
     <ClInclude Include="scene_menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="scene_play.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="src\fonts\mario-kart-ds-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="src\assets\Background_1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

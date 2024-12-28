@@ -30,6 +30,13 @@ void gameEngine::init(std::string str) {
 				std::string path = itr;
 				m_assets.addLevel(name,path);
 			}
+			if (itr == "texture") {
+				myfile >> itr;
+				std::string name = itr;
+				myfile >> itr;
+				std::string path = itr;
+				m_assets.addTexture(name, path);
+			}
 		}
 	}
 
