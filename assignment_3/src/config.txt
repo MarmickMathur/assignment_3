@@ -1,0 +1,8 @@
+readme
+font src/fonts/mario-kart-ds-regular.ttf
+level level-1 src/levels/l1
+level level-2 src/levels/l2
+level level-3 src/levels/l1
+level level-4 src/levels/l2
+level level-5 src/levels/l1
+level level-6 src/levels/l2
