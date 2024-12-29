@@ -12,13 +12,14 @@ class entityManager {
 	entityMap m_eMap;
 	entityVec m_eVec;
 	entityVec m_eToAdd;
+	Vec2 m_scale;
 	size_t m_totalEntitiesProduced;
 
 	void removeEntities(entityVec& m_eVec);
 public:
-	entityManager();
+	entityManager(const Vec2& scale = {1,1});
 	entityVec& getEntities(std::string tag);
 	entityVec& getEntities();
 	std::shared_ptr<entity> addentity(std::string str);
-	void update(std::string str);
+	void update();
 };

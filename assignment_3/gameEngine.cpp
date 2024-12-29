@@ -14,10 +14,8 @@ void gameEngine::init(std::string str) {
 	std::ifstream myfile(str);
 
 	if (myfile.is_open()) {
-		std::cout << "file is open" << "\n";
 		std::string itr;
 		while (myfile >> itr) {
-			std::cout << itr << " ";
 			if (itr == "font") {
 				myfile >> itr;
 				std::string path = itr;
@@ -37,10 +35,19 @@ void gameEngine::init(std::string str) {
 				std::string path = itr;
 				m_assets.addTexture(name, path);
 			}
+			if (itr == "animation") {
+				std::string name , tex;
+				int a, b, c, d;
+				myfile >>name >> tex >> a >> b >> c >> d;
+				//std::cout << name << "b";
+				m_assets.addAnimation(name,animation(name, m_assets.getTexture(tex),a,b,c,d));
+ 				//implement animation input 
+			}
 		}
 	}
+	myfile.close();
 
-	m_window.create(sf::VideoMode(800, 600), "my window");
+	m_window.create(sf::VideoMode(m_assets.getTexture("background").getSize().x , m_assets.getTexture("background").getSize().y), "my window");
 	m_window.setFramerateLimit(60);
 	std::shared_ptr<menu> sceneMenu = std::make_shared<menu>(std::shared_ptr<gameEngine>(this));
 	changeScene("Menu" , sceneMenu);

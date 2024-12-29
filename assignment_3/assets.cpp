@@ -2,12 +2,12 @@
 
 
 void assets::addfont(const std::string& name,const std::string& path) {
-	std::shared_ptr<sf::Font> font= std::make_shared<sf::Font>();
-	font->loadFromFile(path);
+	sf::Font font;
+	font.loadFromFile(path);
 	m_fontMap[name] = font;
 };
 
-std::shared_ptr<sf::Font> assets::getFont(const std::string& name) {
+sf::Font& assets::getFont(const std::string& name) {
 	return m_fontMap[name];
 };
 
@@ -23,12 +23,21 @@ void assets::addLevel(const std::string& name, const std::string& path) {
 	m_LevelPathMap[name] = path;
 }
 
-void assets::addTexture(std::string name, std::string path) {
-	std::shared_ptr<sf::Texture> tex = std::make_shared<sf::Texture>();
-	tex->loadFromFile(path);
+void assets::addTexture(const std::string& name, const std::string& path) {
+	sf::Texture tex;
+	tex.loadFromFile(path);
 	m_textures[name] = tex;
 }
 
-std::shared_ptr<sf::Texture> assets::getTexture(std::string name) {
+sf::Texture& assets::getTexture(const std::string& name) {
 	return m_textures[name];
 }
+
+animation& assets::getAnimation(const std::string& name) {
+	return m_animationMap[name];
+}
+
+void assets::addAnimation(const std::string& name, const animation& anim) {
+	m_animationMap[name] = anim;
+};
+

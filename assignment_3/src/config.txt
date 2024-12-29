@@ -1,5 +1,9 @@
 readme
 font src/fonts/mario-kart-ds-regular.ttf
-level level-1 src/levels/l1
-level level-2 src/levels/l2
+level level-1 src/levels/l1.txt
+level level-2 src/levels/l2.txt
 texture background src/assets/Background_1.png
+texture ground src/assets/Grass_Block.png
+texture dirt src/assets/Dirt_Block.png
+texture player src/assets/Player_Spritesheet.png
+animation standing player 10 3 5 0

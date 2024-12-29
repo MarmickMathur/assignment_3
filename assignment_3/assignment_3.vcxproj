@@ -135,6 +135,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="action.cpp" />
+    <ClCompile Include="animation.cpp" />
     <ClCompile Include="assets.cpp" />
     <ClCompile Include="assignment_3.cpp" />
     <ClCompile Include="components.cpp" />
@@ -153,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="action.h" />
+    <ClInclude Include="animation.h" />
     <ClInclude Include="assets.h" />
     <ClInclude Include="components.h" />
     <ClInclude Include="entity.h" />
@@ -167,7 +169,35 @@
     <Font Include="src\fonts\mario-kart-ds-regular.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="src\assets\Background_0.png" />
     <Image Include="src\assets\Background_1.png" />
+    <Image Include="src\assets\Big_Bush.png" />
+    <Image Include="src\assets\Bridge.png" />
+    <Image Include="src\assets\Clouds.png" />
+    <Image Include="src\assets\Coin_Item.png" />
+    <Image Include="src\assets\Coin_ui.png" />
+    <Image Include="src\assets\Dirt_Block.png" />
+    <Image Include="src\assets\Empty_Brown_Block.png" />
+    <Image Include="src\assets\Enemy1.png" />
+    <Image Include="src\assets\Flag.png" />
+    <Image Include="src\assets\Grass_Block.png" />
+    <Image Include="src\assets\GUI Bar.png" />
+    <Image Include="src\assets\Heart_Item.png" />
+    <Image Include="src\assets\Heart_Ui.png" />
+    <Image Include="src\assets\Hill_0.png" />
+    <Image Include="src\assets\Hill_1.png" />
+    <Image Include="src\assets\icon.png" />
+    <Image Include="src\assets\Impact_Effect.png" />
+    <Image Include="src\assets\Platform.png" />
+    <Image Include="src\assets\Player_Spritesheet.png" />
+    <Image Include="src\assets\Polyester2.png" />
+    <Image Include="src\assets\Question_Block.png" />
+    <Image Include="src\assets\Ripple_Effect.png" />
+    <Image Include="src\assets\Small_Bush.png" />
+    <Image Include="src\assets\Spikes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="src\assets\Fast Desert Theme.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

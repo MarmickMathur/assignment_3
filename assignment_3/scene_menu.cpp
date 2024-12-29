@@ -15,13 +15,12 @@ void menu::init() {
 	registerAction(sf::Keyboard::S, "Down");
 	registerAction(sf::Keyboard::Enter, "Select");
 
-	m_menuText.setFont((*(m_gameEngine->getAssets().getFont("menuFont"))));
+	m_menuText.setFont(m_gameEngine->getAssets().getFont("menuFont"));
 }
 
 void menu::update() {
 	sRender();
 	if (hasEnded) {
-		std::cout << "scene switch";
 		std::shared_ptr<play> selectedScene= std::make_shared<play>(m_gameEngine, m_levelMap[m_levelName]);
 		m_gameEngine->changeScene(m_levelName, selectedScene);
 	}
@@ -37,8 +36,6 @@ void menu::sDoAction(const action& action) {
 			m_index = std::min(m_index, (int)m_levelMap.size() -1);
 		}
 		else if (action.name == "Select") {
-			std::cout << m_levelMap[m_levelName] << "\n";
-			std::cout << "play " << m_levelName;
 			hasEnded = 1;
 		}
 	}

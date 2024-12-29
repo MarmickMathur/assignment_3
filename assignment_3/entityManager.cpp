@@ -1,8 +1,9 @@
 #include "entityManager.h"
 
 
-entityManager::entityManager() :
-	m_totalEntitiesProduced(0)
+entityManager::entityManager(const Vec2& scale) :
+	m_totalEntitiesProduced(0),
+	m_scale(scale)
 {
 }
 
@@ -29,7 +30,7 @@ void entityManager::removeEntities(entityVec& m_eVec) {
 	m_eVec.erase(ne, m_eVec.end());
 }
 
-void entityManager::update(std::string str) {
+void entityManager::update() {
 	for (auto e : m_eToAdd) {
 		m_eMap[e->getTag()].push_back(e);
 		m_eVec.push_back(e);
