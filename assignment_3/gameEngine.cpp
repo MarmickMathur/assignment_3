@@ -37,17 +37,15 @@ void gameEngine::init(std::string str) {
 			}
 			if (itr == "animation") {
 				std::string name , tex;
-				int a, b, c, d;
-				myfile >>name >> tex >> a >> b >> c >> d;
-				//std::cout << name << "b";
-				m_assets.addAnimation(name,animation(name, m_assets.getTexture(tex),a,b,c,d));
- 				//implement animation input 
+				int a, b, c, d, e, f;
+				myfile >>name >> tex >> a >> b >> c >> d >> e >> f;
+				m_assets.addAnimation(name,animation(name, m_assets.getTexture(tex),a,b,c,d,e,f));
 			}
 		}
 	}
 	myfile.close();
 
-	m_window.create(sf::VideoMode(m_assets.getTexture("background").getSize().x , m_assets.getTexture("background").getSize().y), "my window");
+	m_window.create(sf::VideoMode(m_assets.getTexture("background").getSize().x , m_assets.getTexture("background").getSize().y), "my window" );
 	m_window.setFramerateLimit(60);
 	std::shared_ptr<menu> sceneMenu = std::make_shared<menu>(std::shared_ptr<gameEngine>(this));
 	changeScene("Menu" , sceneMenu);

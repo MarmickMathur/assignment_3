@@ -2,8 +2,35 @@ readme
 font src/fonts/mario-kart-ds-regular.ttf
 level level-1 src/levels/l1.txt
 level level-2 src/levels/l2.txt
+texture flag src/assets/Flag.png
+texture cloud src/assets/Clouds.png
+texture bush1 src/assets/Small_Bush.png
+texture hill1 src/assets/Hill_0.png
+texture hill2 src/assets/Hill_1.png
+texture bush2 src/assets/Big_Bush.png
 texture background src/assets/Background_1.png
 texture ground src/assets/Grass_Block.png
 texture dirt src/assets/Dirt_Block.png
+texture breaking src/assets/Empty_Brown_Block.png
 texture player src/assets/Player_Spritesheet.png
-animation standing player 10 3 5 0
+texture Bullet src/assets/Bullet.png
+texture Impact src/assets/Impact_Effect.png
+texture ?block src/assets/Question_Block.png
+texture enemy src/assets/Enemy1.png
+texture coin src/assets/Coin_Item.png
+texture heartUI src/assets/Heart_Ui.png
+texture coinUI src/assets/Coin_ui.png
+texture bridge src/assets/Bridge.png
+animation bullet Bullet 10 1 1 0 0 0
+animation standing player 10 3 5 0 1 0
+animation running player 10 3 5 1 0 0
+animation jumping player 10 3 5 2 2 0
+animation ducking player 10 3 5 3 2 0 
+animation explosion Impact 5 4 1 0 0 0
+animation enemy1Walking enemy 10 6 1 0 2 0
+animation enemy1Destroy enemy 10 6 1 0 0 5
+animation coinSpin coin 15 4 1 0 0 0
+animation death player  30 3 5 4 2 0
+animation heart heartUI 10 1 1 0 0 0
+animation coin coinUI 10 1 1 0 0 0 
+ 

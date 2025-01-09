@@ -30,6 +30,8 @@ void entityManager::removeEntities(entityVec& m_eVec) {
 	m_eVec.erase(ne, m_eVec.end());
 }
 
+
+
 void entityManager::update() {
 	for (auto e : m_eToAdd) {
 		m_eMap[e->getTag()].push_back(e);
@@ -37,9 +39,10 @@ void entityManager::update() {
 	}
 
 	removeEntities(m_eVec);
-	for (auto i : m_eMap) {
+	for (auto& i : m_eMap) {
 		removeEntities(i.second);
 	}
+
 
 	m_eToAdd.clear();
 };

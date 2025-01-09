@@ -60,4 +60,3 @@ cAnimation::cAnimation(const animation& anim, bool loop) :
 
 cState::cState() {
 };
-

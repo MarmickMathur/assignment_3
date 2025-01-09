@@ -145,6 +145,7 @@
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="scene_menu.cpp" />
     <ClCompile Include="scene_play.cpp" />
+    <ClCompile Include="physics.cpp" />
     <ClCompile Include="Vec2.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +174,7 @@
     <Image Include="src\assets\Background_1.png" />
     <Image Include="src\assets\Big_Bush.png" />
     <Image Include="src\assets\Bridge.png" />
+    <Image Include="src\assets\Bullet.png" />
     <Image Include="src\assets\Clouds.png" />
     <Image Include="src\assets\Coin_Item.png" />
     <Image Include="src\assets\Coin_ui.png" />
@@ -198,6 +200,9 @@
   </ItemGroup>
   <ItemGroup>
     <Media Include="src\assets\Fast Desert Theme.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="physics.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

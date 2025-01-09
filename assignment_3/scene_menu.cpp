@@ -14,13 +14,16 @@ void menu::init() {
 	registerAction(sf::Keyboard::W, "Up");
 	registerAction(sf::Keyboard::S, "Down");
 	registerAction(sf::Keyboard::Enter, "Select");
-
+	m_levelMap["quit"] = "...";
 	m_menuText.setFont(m_gameEngine->getAssets().getFont("menuFont"));
 }
 
 void menu::update() {
 	sRender();
 	if (hasEnded) {
+		if (m_levelName == "quit") {
+			m_gameEngine->getWindow().close();
+		}
 		std::shared_ptr<play> selectedScene= std::make_shared<play>(m_gameEngine, m_levelMap[m_levelName]);
 		m_gameEngine->changeScene(m_levelName, selectedScene);
 	}
@@ -65,7 +68,7 @@ void menu::sRender() {
 	float y = m_menuText.getLocalBounds().height / 2 + m_menuText.getLocalBounds().top;
 	//centering the text
 	m_menuText.setOrigin(x, y);
-	m_menuText.setPosition((float)(m_gameEngine->getWindow().getSize().x) / 2.0, (float)(m_gameEngine->getWindow().getSize().y) / 2.0);
+	m_menuText.setPosition((int)(m_gameEngine->getWindow().getView().getCenter().x), (int)(m_gameEngine->getWindow().getView().getCenter().y));
 
 	m_gameEngine->getWindow().draw(m_menuText);
 	m_gameEngine->getWindow().display();
